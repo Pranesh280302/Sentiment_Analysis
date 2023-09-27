@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div id="page-content">
+    <div class="container text-center">
+        <!-- Result -->
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                {% if prediction == 1 %}
+                <img src="{{ url_for('static', filename='img/happy-smiley.svg') }}" class="img-fluid" alt="...">
+                <p class="card-text alert alert-success">Great! This is a POSITIVE Review</p>
+                {% elif prediction == 0 %}
+                <img src="{{ url_for('static', filename='img/sad-smiley.svg') }}" class="img-fluid" alt="...">
+                <p class="card-text alert alert-danger">Oops! This is a NEGATIVE Review.</p>
+                {% endif %}
+            </div>
+        </div>
+        <br>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <a class="btn btn-dark" href="{{ url_for('home') }}" role="button">Another Review</a>
+            </div>
+        </div>
+        <br>
+    </div>
+</div>
+
+{% endblock %}

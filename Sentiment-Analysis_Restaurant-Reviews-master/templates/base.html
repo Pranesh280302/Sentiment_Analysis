@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{# head #}
+
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Sentiment Analysis - Restaurant Reviews"/>
+    <meta name="author" content="Bharat Kammakatla"/>
+    <title>Sentiment Analysis - Restaurant Reviews</title>
+    {% block styles %}
+    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+    {{ bootstrap.load_css() }}
+    {% endblock %}
+    {% endblock %}
+</head>
+
+{# body #}
+<body class="d-flex flex-column">
+{# Header #}
+{% block header %}
+
+<header class="bg-dark text-center py-4 mb-4">
+    <div class="container">
+        <h2 class="font-weight-bold text-white">Sentiment Analysis - Restaurant Reviews</h2>
+    </div>
+</header>
+
+{% endblock %}
+
+{# flash messaging #}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            {% for message in get_flashed_messages() %}
+            <div class=" container alert alert-info my-flash-class">
+                <button type="button" class="close" data-dismiss="alert"></button>
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{# empty block for custom content #}
+{% block content %} {% endblock content %}
+
+
+{# footer #}
+
+{% block footer %}
+<footer id="sticky-footer" class="py-4 bg-dark text-white">
+    <div class="container text-center">
+        <a target="_blank" href="https://github.com/BharatKammakatla/Sentiment-Analysis_Restaurant-Reviews"><i
+                class="fab fa-github fa-lg contact-icon"></i></a>
+        <a target="_blank" href="https://www.linkedin.com/in/bharatkammakatla"><i
+                class="fab fa-linkedin fa-lg contact-icon"></i></a>
+    </div>
+    <div class="container text-center">
+        <small>Made with ❤️ by <a href="https://bharatkammakatla.com" style="color:white">Bharat Kammakatla</a></small>
+    </div>
+</footer>
+{% endblock %}
+
+
+{# optional scripts #}
+{% block scripts %}
+<!-- Optional JavaScript -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+
+{{ bootstrap.load_js() }}
+{% endblock %}
+</body>
+</html>
