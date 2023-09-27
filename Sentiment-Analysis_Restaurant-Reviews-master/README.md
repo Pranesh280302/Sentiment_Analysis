@@ -4,7 +4,7 @@ Predict sentiment(+ve / -ve) of Restaurant Reviews using NLP.
 
 <p align="center">
   <kbd>
-    <img src="RestaurantReviews.gif"></img>
+   
   </kbd>
 </p>
 
